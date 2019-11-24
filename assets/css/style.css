@@ -1,0 +1,14 @@
+body{
+    background-image: url("https://cdn.dodowallpaper.com/full/870/batman-the-dark-knight-wallpapers-23.jpg");
+}
+
+nav h1 {
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.jumbotron {
+    background: none;
+    color: white
+}
