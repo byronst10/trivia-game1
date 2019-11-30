@@ -191,8 +191,8 @@ $("#reset").on("click", function() {
         $("#reset").hide();
         $("#results").empty();
         $("#questionContainer").empty();
-        for(var i = 0; i < holder.length; i++) {
-            options.push(holder[i]);
+        for(var i = 0; i < placeholder.length; i++) {
+            options.push(placeholder[i]);
         }
         runTimer();
         displayQuestion();
