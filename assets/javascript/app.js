@@ -84,7 +84,7 @@ var questions = [
 },
 
     {
-        question: "What name does The Joker's nametag have in the "Hospital scene"?",
+        question: "What name does The Joker's nametag have in the 'Hospital scene'?",
         choices: {
             a: 'Denise',
             b: 'Sasha',
@@ -122,6 +122,7 @@ var questions = [
 
 },]
 
+
 $("#play").on("click", function () {
     $("#play").hide();
     displayQuestion();
@@ -129,6 +130,14 @@ $("#play").on("click", function () {
     for(var i = 0; i < questions.length; i++) {
 placeholder.push(questions[i]);
     }
+})
+$("#reset").hide;
+
+function TimedInterval(){
+	if (!running) {
+	intervalId = setInterval(decrement, 1000); 
+	running = true;
+	}
 }
 
 function decrement() {
@@ -138,6 +147,7 @@ function decrement() {
 if (timer === 0) {
     noAnswer++;
     stop();
+    $("#results").html("<p>Time's up, Batman! The correct answer is: " + choose.choices[choose.answer] + "</p>");
     }
 }
 
@@ -166,15 +176,26 @@ $(".answerchoice").on("click", function () {
 		stop();
 		right++;
 		guess="";
-		$("#results").html("<p>Correct!</p>");
+		$("#results").html("<p>That's correct!</p>");
 		
 	} else {
 		stop();
 		wrong++;
 		guess="";
-		$("#results").html("<p>Wrong! The correct answer is: " + choose.choices[choose.answer] + "</p>");
+		$("#results").html("<p>Wrong answer, Batman! The correct answer is: " + choose.choices[choose.answer] + "</p>");
     
         }
     }
+
+$("#reset").on("click", function() {
+        $("#reset").hide();
+        $("#results").empty();
+        $("#questionContainer").empty();
+        for(var i = 0; i < holder.length; i++) {
+            options.push(holder[i]);
+        }
+        runTimer();
+        displayQuestion();
+    
 }
 
